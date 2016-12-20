@@ -1,0 +1,332 @@
+/* =============================================================================
+  VARIABLES
+============================================================================= */
+
+:root {
+  --main-bg-color: white;
+  --main-font-color: #333;
+  --wide-nav-width: 27%;
+  --narrow-nav-width: 17%;
+  --extra-narrow-nav-width: 13%;
+}
+
+/* =============================================================================
+  BASIC STUFF
+============================================================================= */
+
+html,
+body {
+  background-color: white;
+  background-color: var(--main-bg-color);
+  color: #222;
+  color: var(--main-font-color);
+}
+
+/* Remove the gap between images and the bottom of their containers: h5bp.com/i/440 */
+img {
+  vertical-align: middle;
+}
+
+a, a:hover, a:active, a:visited {
+  text-decoration: none;
+  color: #222;
+  color: var(--main-font-color);
+}
+  a:hover {
+    text-decoration: underline;
+  }
+
+small {
+  display: block;
+}
+
+/* =============================================================================
+  TYPE
+============================================================================= */
+
+body {
+  font-family: serif;
+  letter-spacing: 1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+  h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    text-decoration: none;
+  }
+
+/* =============================================================================
+  HOMEPAGE
+============================================================================= */
+
+.splash-image {
+  margin-bottom: 4rem;
+}
+
+.splash-image img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+/* =============================================================================
+  MAIN NAV
+============================================================================= */
+
+.links-wrapper {
+  padding: 1rem;
+}
+
+.main-nav {
+  font-style: italic;
+}
+
+.main-nav-list {
+  text-transform: capitalize;
+}
+
+.contact.email {
+  text-transform: initial;
+}
+
+.site-logo {
+  max-width: 100px;
+  height: auto;
+  margin: 2rem 0;
+}
+
+/* =============================================================================
+  PORTFOLIO CONTENT
+============================================================================= */
+
+.image-item, .portfolio-image, .video-item, .portfolio-video {
+  width: 100%;
+}
+
+.contact-links {
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+
+.site-info {
+  margin: 2rem 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.intro-text {
+  display: inline-block;
+  padding: 0 1rem 1rem 1rem;
+  max-width: 100%;
+  white-space: initial;
+}
+
+.intro-text * {
+  margin: 0 0 1rem 0;
+}
+
+.caption {
+  display: block;
+  text-align: center;
+  padding: 0.75% 0;
+  margin: 0;
+}
+
+/* =============================================================================
+  HELPER CLASSES
+============================================================================= */
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+  /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+  .visuallyhidden.focusable:active,
+  .visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+
+/* =============================================================================
+  MEDIA QUERIES
+============================================================================= */
+
+@media only screen and (min-width: 55rem) {
+
+  .links-wrapper {
+    width: 17%;
+    width: var(--wide-nav-width);
+    background: rgba(255,255,255,0.697);
+    position: fixed;
+    height: 100vh;
+  }
+
+  .site-logo {
+    margin: 1rem 0;
+  }
+
+  .splash-image {
+    padding-left: 17%;
+    padding-left: var(--wide-nav-width);
+    margin: 0;
+  }
+
+  .splash-image img {
+    max-height: 100vh;
+    height: auto;
+    width: auto;
+  }
+
+  .main-content-list {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 100vh;
+    max-height: 1211px; /* tweak me! */
+    padding-left: 17%;
+    padding-left: var(--wide-nav-width);
+  }
+
+  .main-content-list li {
+    display: inline-block;
+    width: auto;
+    vertical-align: bottom;
+  }
+
+  .main-content-list li, .main-content-list li .portfolio-image {
+    height: 100vh;
+    max-width: initial;
+  }
+
+  .image-item, .portfolio-image, .video-item, .portfolio-video {
+    width: auto;
+  }
+
+  .caption {
+    padding: 1rem 0;
+    top: -3.75rem;
+    background-color: white;
+    background-color: var(--main-bg-color);
+    position: relative;
+    font-size: 1rem;
+    height: 3rem;
+  }
+
+  .main-content-list li.intro-text {
+    max-width: 17%;
+    max-width: var(--wide-nav-width);
+    padding: 1rem;
+  }
+
+} /* @media only screen and (min-width: 55rem) */
+
+@media only screen and (min-width: 75rem) {
+
+  .links-wrapper {
+    width: 17%;
+    width: var(--narrow-nav-width);
+  }
+
+  .splash-image,
+  .main-content-list {
+    padding-left: 17%;
+    padding-left: var(--narrow-nav-width);
+  }
+
+}
+
+@media only screen and (min-width: 90rem) {
+
+  .links-wrapper {
+    width: 17%;
+    width: var(--extra-narrow-nav-width);
+  }
+
+  .splash-image,
+  .main-content-list {
+    padding-left: 17%;
+    padding-left: var(--extra-narrow-nav-width);
+  }
+
+  .main-content-list li.intro-text {
+    max-width: 17%;
+    max-width: var(--narrow-nav-width);
+  }
+
+}
+
+@media only screen and (min-height: 85rem) {
+
+  .main-content-list li, .main-content-list li .portfolio-image {
+    height: 85rem;
+  }
+
+}
+
+/* =============================================================================
+  404 PAGE
+============================================================================= */
+
+.page-not-found {
+  text-align: center;
+}
+
+.go-home {
+  padding: 1rem;
+  display: inline-block;
+}
+
+#homey {
+  width: 90%;
+  max-width: 600px;
+  height: 300px;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* =============================================================================
+  PRINT STYLES
+============================================================================= */
+
+@media print {
+
+  * {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  img, video {
+    width: 90% !important;
+    max-width: 99999999px !important;
+    page-break-inside: avoid;
+    margin: 1rem auto;
+    display: block;
+  }
+
+  .main-nav-list {
+    margin-top: 1rem;
+  }
+
+  .site-logo {
+    display: none;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+} /* @media print */

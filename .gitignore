@@ -1,0 +1,20 @@
+# Ignore a production configuration file.
+config.ini
+
+# Workfiles.
+TODO*
+
+# Ignore user added, site-specific logo and favicon.
+logo.png
+favicon.ico
+
+# Ignore GitHub post-recieve hook files.
+github.php
+git.log
+
+# Ignore user added additional-links.
+additional_links.html
+
+# Ignore machine generated CSS and JS.
+style.css
+bundle.js
