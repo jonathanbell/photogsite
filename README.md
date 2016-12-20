@@ -90,13 +90,13 @@ Similar to logo.png, simply place a 16px X 16px ```favicon.ico``` file at the ro
 PhotogSite will automagically detect the presence of captions contained within the metadata of each photo and display the caption if it finds one. To add captions to your images, open them in your favourite image editor and edit the image's "Description" metadata. Boom! Instant caption!
 
 ### Intro Text
-If you'd like to display some introductory text at the beginning of a section, place a file named ```intro.html``` alongside your images inside your section's folder. The introductory text will display at the start of the portfolio section. Note that you must use HTML in order to write this file. You can find an example in ```_demo.sections/03_bears/intro.html```. Simply copy this file into your own section and edit it with your text editor.
+If you'd like to display some introductory text at the beginning of a section, place a file named ```intro.html``` alongside your images inside the section's folder. The introductory text will display at the begining of the portfolio section. Note that you should use HTML to write this file. You can find an example in ```_demo.sections/03_bears/intro.html```. Simply copy this file into your own section and edit it with your text editor.
 
 ### Adding Links and Content to the Sidebar
-You can add content such as links and short paragraphs into the main navigation bar. Simply copy and rename ```demo.additional_links.html``` to ```additional_links.html``` and place it in PhotogSite's root directory. Open it in your text editor and follow the instructions inside. Some basic knowledge of HTML is required to edit this file.
+You can add content such as links and short paragraphs into the main navigation. Simply copy and rename ```demo.additional_links.html``` to ```additional_links.html``` and place it in PhotogSite's root directory. Open it in your text editor and follow the instructions inside. Some basic knowledge of HTML is required to edit this file.
 
 ### Videos
-Videos are not yet supported but will be in a future release. 
+Videos are not yet supported but YouTube & Vimeo videos will be supported in a future release. 
 
 ## PhotogSite was Inspired by:
 - [Stacey](http://www.staceyapp.com/)
