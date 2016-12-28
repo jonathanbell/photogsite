@@ -13,20 +13,24 @@ PhotogSite was written with simplicity in mind. There are no databases, no insta
 
 1. Download or clone this repository.
 1. Copy and rename ```demo.config.ini``` to ```config.ini```.
-1. Open ```config.ini``` inside your text editor and adjust the values to suite your needs. Change ```demo_mode``` from ```true``` to ```false```. Values can be ```true``` or ```false``` or a string inside "quotes" such as ```"myemail@email.com"```. Do not remove "quotes" and do not add quote marks to the file. Edit the values as ```true``` or ```false``` or change the values inside the "quotes". The values inside this file are used to customize your site. 
-1. In preparation for upload, size your images in a photo editor like PhotoShop. Make your images ~1000px tall. Save the images as "optimized for web".
+1. Open ```config.ini``` inside your text editor and adjust the values to suite your needs. Change ```demo_mode``` from ```true``` to ```false```. Values can be ```true``` or ```false``` or a string inside "quotes" such as ```"myemail@email.com"```. Do not remove "quotes" and do not add quote marks to the file. Edit the values as ```true``` or ```false``` or change the values inside the "quotes". The values inside ```config.ini``` are used to customize your site. 
+1. In preparation for upload, size your images in a photo editor like PhotoShop. Make your images ~1000px tall. **Save your images as "optimized for web"** otherwise they will load slowly over the internet.
 1. Inside the ```_sections``` folder, create a folder for each section of your site. Title each folder with the name of its section. For example, you might make 3 folders titled: "portraits", "still life" and "personal work". **Do not use capital letters.** PhotogSite's default theme will show the section names capitalized inside the main navigation of the site. 
 1. Upload/place the images for each section into their proper folders on your site. Following the example above, place all of your personal work into the "personal work" folder and all of your portrait work into the "portraits" folder.
 1. You're done! Go checkout your new site!
 
-For more information, or, if you need help [the old installation video](https://www.youtube.com/watch?v=xnd18UwaMWs).
+For more information, or, if you need help you can view [the old (slightly outdated) installation video](https://www.youtube.com/watch?v=xnd18UwaMWs) or [email me](mailto:jonathanbell.ca@gmail.com).
 
 ## Requirements
 
 Almost all commercial webhosts will meet PhotogSite's requirements. A basic install requires: 
 
-- Apache 
-- PHP 
+- Apache2
+- PHP version 5.3 or greater
+
+## Browser Support
+
+Currently working in all modern mobile and desktop browsers and IE11 and greater. Default responsive theme allows easy viewing on mobile devices.
 
 ## Options
 
@@ -107,6 +111,6 @@ Videos are not yet supported but YouTube & Vimeo videos will be supported in a f
 
 ## Support
 
-Please file a ticket here if you encounter issues. Thanks.
+Please [file an issue](https://github.com/jonathanbell/PhotogSite/issues) if you encounter any errors. Thanks.
 
 ![It's free software](https://camo.githubusercontent.com/df781f87da2f2db87b5cc3125d5459bc70812112/687474703a2f2f64726f70732e6b796c65666f782e63612f31637147502b)

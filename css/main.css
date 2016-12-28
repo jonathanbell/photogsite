@@ -82,6 +82,10 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic;
 }
 
+.main-site-title {
+  margin-bottom: 2rem;
+}
+
 .main-nav-list {
   text-transform: capitalize;
 }
@@ -170,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
     width: var(--wide-nav-width);
     background: rgba(255,255,255,0.697);
     position: fixed;
-    height: 100vh;
+    height: calc(100vh - 16px); /* Subtract 16px because: http://stackoverflow.com/questions/41367621/element-with-height-100vh-covers-horizontal-scrollbar */
   }
 
   .site-logo {

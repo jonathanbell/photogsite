@@ -10,7 +10,7 @@
   ?>
   </title>
   <meta name="description" content="The online photography portfolio of <?php print $config['site_title'] ?>">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <?php
 
