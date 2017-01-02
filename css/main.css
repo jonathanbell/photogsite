@@ -7,7 +7,7 @@
   --main-font-color: #333;
   --wide-nav-width: 27%;
   --narrow-nav-width: 19%;
-  --extra-narrow-nav-width: 13%;
+  --extra-narrow-nav-width: 17%;
 }
 
 /* =============================================================================
@@ -255,13 +255,11 @@ h1, h2, h3, h4, h5, h6 {
 @media only screen and (min-width: 90rem) {
 
   .links-wrapper {
-    width: 19%;
     width: var(--extra-narrow-nav-width);
   }
 
   .splash-image,
   .main-content-list {
-    padding-left: 19%;
     padding-left: var(--extra-narrow-nav-width);
   }
 
