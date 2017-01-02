@@ -66,7 +66,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .splash-image img {
   max-width: 100%;
-  width: 100%;
   height: auto;
 }
 
@@ -189,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .splash-image img {
-    max-height: 100vh;
+    max-height: 79vh;
     height: auto;
     width: auto;
   }
