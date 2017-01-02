@@ -6,7 +6,7 @@
   --main-bg-color: white;
   --main-font-color: #333;
   --wide-nav-width: 27%;
-  --narrow-nav-width: 17%;
+  --narrow-nav-width: 19%;
   --extra-narrow-nav-width: 13%;
 }
 
@@ -88,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-nav-list {
   text-transform: capitalize;
+  line-height: 1.3;
 }
 
 .contact.email {
@@ -170,11 +171,11 @@ h1, h2, h3, h4, h5, h6 {
 @media only screen and (min-width: 55rem) {
 
   .links-wrapper {
-    width: 17%;
+    width: 19%;
     width: var(--wide-nav-width);
     background: rgba(255,255,255,0.697);
     position: fixed;
-    height: calc(100vh - 16px); /* Subtract 16px because: http://stackoverflow.com/questions/41367621/element-with-height-100vh-covers-horizontal-scrollbar */
+    height: calc(100vh - 15px); /* Subtract 15/16px because: http://stackoverflow.com/questions/41367621/element-with-height-100vh-covers-horizontal-scrollbar */
   }
 
   .site-logo {
@@ -182,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .splash-image {
-    padding-left: 17%;
+    padding-left: 19%;
     padding-left: var(--wide-nav-width);
     margin: 0;
   }
@@ -199,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow-y: hidden;
     height: 100vh;
     max-height: 1211px; /* tweak me! */
-    padding-left: 17%;
+    padding-left: 19%;
     padding-left: var(--wide-nav-width);
   }
 
@@ -229,7 +230,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .main-content-list li.intro-text {
-    max-width: 17%;
+    max-width: 19%;
     max-width: var(--wide-nav-width);
     padding: 1rem;
   }
@@ -239,13 +240,13 @@ h1, h2, h3, h4, h5, h6 {
 @media only screen and (min-width: 75rem) {
 
   .links-wrapper {
-    width: 17%;
+    width: 19%;
     width: var(--narrow-nav-width);
   }
 
   .splash-image,
   .main-content-list {
-    padding-left: 17%;
+    padding-left: 19%;
     padding-left: var(--narrow-nav-width);
   }
 
@@ -254,18 +255,18 @@ h1, h2, h3, h4, h5, h6 {
 @media only screen and (min-width: 90rem) {
 
   .links-wrapper {
-    width: 17%;
+    width: 19%;
     width: var(--extra-narrow-nav-width);
   }
 
   .splash-image,
   .main-content-list {
-    padding-left: 17%;
+    padding-left: 19%;
     padding-left: var(--extra-narrow-nav-width);
   }
 
   .main-content-list li.intro-text {
-    max-width: 17%;
+    max-width: 19%;
     max-width: var(--narrow-nav-width);
   }
 
@@ -277,27 +278,6 @@ h1, h2, h3, h4, h5, h6 {
     height: 85rem;
   }
 
-}
-
-/* =============================================================================
-  404 PAGE
-============================================================================= */
-
-.page-not-found {
-  text-align: center;
-}
-
-.go-home {
-  padding: 1rem;
-  display: inline-block;
-}
-
-#homey {
-  width: 90%;
-  max-width: 600px;
-  height: 300px;
-  display: block;
-  margin: 1rem auto;
 }
 
 /* =============================================================================

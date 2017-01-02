@@ -49,5 +49,5 @@ function getRandomImage($portfolio_sections_with_ordinal, $sections_path) {
   shuffle($portfolio_sections_with_ordinal);
   $chosen_images = glob('.'.$sections_path.'/'.$portfolio_sections_with_ordinal[0].'/*.{tif,gif,png,jpg}', GLOB_BRACE);
   shuffle($chosen_images);
-  return ltrim($chosen_images[0], './');
+  return webSafeSpaces(ltrim($chosen_images[0], './'));
 }
