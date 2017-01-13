@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/jonathanbell/photogsite.svg)](https://travis-ci.org/jonathanbell/photogsite)
+[![Build Status](https://travis-ci.org/jonathanbell/PhotogSite.svg)](https://travis-ci.org/jonathanbell/PhotogSite)
 
 PhotogSite
 ==========
