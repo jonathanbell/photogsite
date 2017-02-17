@@ -283,7 +283,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Reset the height of the nav bar on Safari v9+ desktop. */
 /* http://stackoverflow.com/a/25975282/1171790 */
-_::-webkit-:not(:root:root), .links-wrapper {
+_::-webkit-:-webkit-full-screen:host:not(:root:root), .links-wrapper {
   height: 100vh;
 }
 
