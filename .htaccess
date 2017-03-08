@@ -1,37 +1,4 @@
 # ##############################################################################
-# # CROSS-ORIGIN RESOURCE SHARING (CORS)                                       #
-# ##############################################################################
-
-# ------------------------------------------------------------------------------
-# | Cross-domain AJAX requests                                                 |
-# ------------------------------------------------------------------------------
-
-# Enable cross-origin AJAX requests.
-# http://code.google.com/p/html5security/wiki/CrossOriginRequestSecurity
-# http://enable-cors.org/
-
-<IfModule mod_headers.c>
-   Header set Access-Control-Allow-Origin "*"
-</IfModule>
-
-# ------------------------------------------------------------------------------
-# | CORS-enabled images                                                        |
-# ------------------------------------------------------------------------------
-
-# Send the CORS header for images when browsers request it.
-# https://developer.mozilla.org/en/CORS_Enabled_Image
-# http://blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html
-
-<IfModule mod_setenvif.c>
-    <IfModule mod_headers.c>
-        <FilesMatch "\.(gif|ico|jpe?g|png|svgz?|webp)$">
-            SetEnvIf Origin ":" IS_CORS
-            Header set Access-Control-Allow-Origin "*" env=IS_CORS
-        </FilesMatch>
-    </IfModule>
-</IfModule>
-
-# ##############################################################################
 # # ERRORS                                                                     #
 # ##############################################################################
 
@@ -196,8 +163,6 @@ AddDefaultCharset utf-8
     Options -Indexes
 </IfModule>
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Block access to hidden files and directories.
 # This includes directories used by version control systems such as Git and SVN.
 
@@ -206,8 +171,6 @@ AddDefaultCharset utf-8
     RewriteCond %{SCRIPT_FILENAME} -f
     RewriteRule "(^|/)\." - [F]
 </IfModule>
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Block access to backup and source files.
 # These files may be left by some text editors and can pose a great security
@@ -218,7 +181,6 @@ AddDefaultCharset utf-8
     Deny from all
     Satisfy All
 </FilesMatch>
-
 
 # ##############################################################################
 # # WEB PERFORMANCE                                                            #
