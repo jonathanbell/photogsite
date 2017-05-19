@@ -24,12 +24,14 @@ if (!file_exists(__DIR__.'/config.ini')) {
 // We tidy this in .htaccess for clean URLs. : )
 $section = FALSE;
 if (isset($_GET['section'])) {
-  $section = $_GET['section'];
+  // Replace any occurences of a slash in $_GET['section'] before setting $section..
+  // This could occur on Nginx but probably not on Apache.
+  $section = str_replace('/', '', $_GET['section']);
 }
 
 /**
  * Define autoloader.
- * @param string $class_name 
+ * @param string $class_name
  */
 function __autoload($class_name) {
   require_once('./classes/class.'.$class_name.'.inc');
@@ -38,7 +40,7 @@ function __autoload($class_name) {
 // Include all helper functions.
 require_once('./inc/functions.inc');
 
-$sections_path = $config['demo_mode'] ? '/_demo.sections' : '/_sections'; 
+$sections_path = $config['demo_mode'] ? '/_demo.sections' : '/_sections';
 
 // Get all of our portfolio sections.
 $portfolio_sections_with_ordinal = [];
@@ -55,13 +57,13 @@ if ($section && !in_array(dashesToSpaces($section), $portfolio_sections)) {
   header('HTTP/1.0 404 Not Found');
   echo (file_get_contents('404.html'));
   exit();
-} 
+}
 
-// We will pass this path to our Section class. 
+// We will pass this path to our Section class.
 $section_id = array_search(dashesToSpaces($section), $portfolio_sections);
 $true_section_path = '.'.$sections_path.'/'.$portfolio_sections_with_ordinal[$section_id];
 
 // We all good cuz. Let's get this party started!
-require_once(__DIR__.'/inc/template.inc'); 
+require_once(__DIR__.'/inc/template.inc');
 
 ?>
