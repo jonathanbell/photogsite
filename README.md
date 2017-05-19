@@ -5,7 +5,7 @@ PhotogSite
 
 PhotogSite creates a portfolio website for photographers and artists. Simply, size your images and place them into folders - PhotogSite will produce a website [like this one](http://jonathanbell.ca/).
 
-Each sub-folder inside PhotogSite's ```_sections``` folder becomes a section on your website. Simply create folders and place each section's images inside them. The folder names become the titles of each portfolio section on your site. 
+Each sub-folder inside PhotogSite's ```_sections``` folder becomes a section on your website. Simply create folders and place each section's images inside them. The folder names become the titles of each portfolio section on your site.
 
 PhotogSite was written with simplicity in mind. There are no databases, no install files, no login screen, no admin interface - just a simple way to stand up an artist's portfolio site quickly.
 
@@ -14,7 +14,7 @@ PhotogSite was written with simplicity in mind. There are no databases, no insta
 1. [Download](https://github.com/jonathanbell/PhotogSite/archive/master.zip) or clone this repository.
 1. In preparation for upload, size your images in a photo editor like PhotoShop. Make your images ~1000px tall. **Save your images as "optimized for web"** otherwise they will load slowly over the internet. You may also wish to use an image squisher, such as [ImageOptim](https://imageoptim.com/versions.html) or [Trimage](https://trimage.org/). Do not use ImageOptim or Trimage if you wish to preserve your [image captions](https://github.com/jonathanbell/PhotogSite#captions).
 1. Copy and rename ```demo.config.ini``` to ```config.ini```.
-1. Open ```config.ini``` inside your text editor and adjust the values to suite your needs. Change ```demo_mode``` from ```true``` to ```false```. Values can be ```true``` or ```false``` or a string inside "quotes" such as ```"myemail@email.com"```. Do not remove "quotes" and do not add quote marks to the file. Edit the values as ```true``` or ```false``` or change the values inside the "quotes". The values inside ```config.ini``` are used to customize your site. See [Options](https://github.com/jonathanbell/PhotogSite#options) for more information. 
+1. Open ```config.ini``` inside your text editor and adjust the values to suite your needs. Change ```demo_mode``` from ```true``` to ```false```. Values can be ```true``` or ```false``` or a string inside "quotes" such as ```"myemail@email.com"```. Do not remove "quotes" and do not add quote marks to the file. Edit the values as ```true``` or ```false``` or change the values inside the "quotes". The values inside ```config.ini``` are used to customize your site. See [Options](https://github.com/jonathanbell/PhotogSite#options) for more information.
 1. Inside the ```_sections``` folder, create a folder for each section of your site. Title each folder with the name of its section. For example, you might make 3 folders titled: "portraits", "still life" and "personal work". **Do not use capital letters.** PhotogSite's default theme displays the section names capitalized in the main navigation area of your site. To adjust the display order of each section, see: [Display Order](https://github.com/jonathanbell/PhotogSite#display-order-and-naming-conventions)
 1. Upload/place the images for each section into their proper folders on your site. Following the example above, place all of your personal work into the "personal work" folder and all of your portrait work into the "portraits" folder.
 1. Upload all code files and images to your web server, if you haven't already done so.
@@ -24,11 +24,39 @@ For more information, or, if you need help you can view [the (slightly outdated)
 
 ## Requirements
 
-Almost all commercial webhosts will meet PhotogSite's requirements. A basic install requires: 
+Almost all commercial webhosts will meet PhotogSite's requirements. A basic install requires:
 
-- Apache2
+- Apache2 (or Nginx, see below)
 - PHP version 5.3 or greater
 - Correct file permissions (775) for PHP to create and delete files inside the PhotogSite root directory and subdirectories
+
+### Using Nginx?
+
+A configuration like is needed for PhotogSite to perform proper URL rewrites.
+
+```
+server {
+
+  root /var/www/mysite.com;
+
+  index index.php;
+  server_name mysite.com;
+
+  location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+  }
+
+  location / {
+    try_files $uri $uri/ @fallback;
+  }
+
+  location @fallback {
+    rewrite ^/(.*)$ /index.php?section=$1 last;
+  }
+
+}
+```
 
 ## Browser Support
 
@@ -39,19 +67,19 @@ Currently working in all modern mobile and desktop browsers and IE11 and greater
 PhotogSite has a number of user configurable options.
 
 ### Display Order and Naming Conventions
-You can easily change the display order of your portfolio's sections. For example, you might have a portfolio section called "zebras" and one called "apple". Normally, "apple" will display before "zebra". However, by adding **01_** to "zebra" and adding **02\_** to "apple" we can display "zebra" before "apple" in the navigation. 
+You can easily change the display order of your portfolio's sections. For example, you might have a portfolio section called "zebras" and one called "apple". Normally, "apple" will display before "zebra". However, by adding **01_** to "zebra" and adding **02\_** to "apple" we can display "zebra" before "apple" in the navigation.
 
-This naming convention is optional. Folder names **01_zebras** and **zebras** are both valid. 
+This naming convention is optional. Folder names **01_zebras** and **zebras** are both valid.
 
-If you do want to change the display order of your portfolio's sections, simply follow the folder naming convention: **01_**zebras, **02\_**apples, **03\_**portraits, etc. 
+If you do want to change the display order of your portfolio's sections, simply follow the folder naming convention: **01_**zebras, **02\_**apples, **03\_**portraits, etc.
 
 ### config.ini
 By default, PhotogSite will look for a ```config.ini``` file inside the PhotogSite root directory. This file contains most of PhotogSite's options and their values. The ```config.ini``` options follow the convention: ```option = "value" | [true|false]```
 
-To change one of the options on your site, simply edit the ```config.ini``` file using a text editor. 
+To change one of the options on your site, simply edit the ```config.ini``` file using a text editor.
 
 - **demo\_mode** _boolean_
-By default, if you don't copy and rename ```demo.config.ini``` demo mode will be used. PhotogSite will show the demo images (animals) instead of the content inside the ```_sections``` directory. 
+By default, if you don't copy and rename ```demo.config.ini``` demo mode will be used. PhotogSite will show the demo images (animals) instead of the content inside the ```_sections``` directory.
 
 - **site\_title** _string_
 The title of your site or your name.
@@ -69,13 +97,13 @@ The URL of your blog (in case you'd like to link to your blog from your website)
 The text displayed as the link to your blog. Example: ```"My Blog"```
 
 - **show\_blog\_link** _boolean_
-Should we show the link to your blog or hide it? 
+Should we show the link to your blog or hide it?
 
 - **promote\_photogsite** _boolean_
 Shows "Site created with PhotogSite" at the bottom of the main navigation. If you were nice, you'd leave this set to ```true```
 
 - **show\_copywrite** _boolean_
-Displays "Copywrite {year} {site_title}" at the bottom of the main navigation. 
+Displays "Copywrite {year} {site_title}" at the bottom of the main navigation.
 
 - **show\_random\_homepage\_image** _boolean_
 Displays one of your portfolio images at random on the homepage.
@@ -84,10 +112,10 @@ Displays one of your portfolio images at random on the homepage.
 If you have a Google Analytics [tracking code](https://support.google.com/analytics/answer/1032385?hl=en), paste it here and set **use\_google\_analytics** to ```true```
 
 - **use\_google\_analytics** _boolean_
-Only enable if you are using [Google Analytics](https://www.google.com/analytics) on your site. 
+Only enable if you are using [Google Analytics](https://www.google.com/analytics) on your site.
 
 ### logo.png
-If you would like to display your logo on your portfolio site, simply place a file named ```logo.png``` inside PhotogSite's root directory. It's recommened to upload a logo with a transparent background. 
+If you would like to display your logo on your portfolio site, simply place a file named ```logo.png``` inside PhotogSite's root directory. It's recommened to upload a logo with a transparent background.
 
 ### favicon.ico
 Similar to logo.png, simply place a 16px X 16px ```favicon.ico``` file at the root of your PhotogSite install. You can also place a apple-touch-icon.png at the root of your site.
@@ -113,7 +141,7 @@ Videos are not yet supported but YouTube & Vimeo videos will be supported in a f
 
 ## Support
 
-Please [file an issue](https://github.com/jonathanbell/PhotogSite/issues) if you encounter any errors. 
+Please [file an issue](https://github.com/jonathanbell/PhotogSite/issues) if you encounter any errors.
 
 ![It's free software](https://camo.githubusercontent.com/df781f87da2f2db87b5cc3125d5459bc70812112/687474703a2f2f64726f70732e6b796c65666f782e63612f31637147502b)
 
