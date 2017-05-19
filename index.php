@@ -24,9 +24,7 @@ if (!file_exists(__DIR__.'/config.ini')) {
 // We tidy this in .htaccess for clean URLs. : )
 $section = FALSE;
 if (isset($_GET['section'])) {
-  // Replace any occurences of a slash in $_GET['section'] before setting $section..
-  // This could occur on Nginx but probably not on Apache.
-  $section = str_replace('/', '', $_GET['section']);
+  $section = $_GET['section'];
 }
 
 /**
