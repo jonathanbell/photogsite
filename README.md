@@ -32,7 +32,7 @@ Almost all commercial webhosts will meet PhotogSite's requirements. A basic inst
 
 ### Using Nginx?
 
-A configuration like is needed for PhotogSite to perform proper URL rewrites.
+A server configuration like this is needed for PhotogSite to perform proper URL rewrites.
 
 ```
 server {
