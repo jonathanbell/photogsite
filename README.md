@@ -143,13 +143,6 @@ You can add content such as links and short paragraphs into the main navigation.
 ### Videos
 Videos are not yet supported but YouTube & Vimeo videos will be supported in a future release.
 
-## PhotogSite was Inspired by:
-- [Stacey](http://www.staceyapp.com/)
-- [Jonathan Waiter](http://www.jonathanwaiter.com/)
-- [Cass Bird](http://www.cassbird.com/)
-- [Indexhibit](http://www.indexhibit.org/)
-- And my own personal need to have a super simple portfolio website that I can update easily! Life's too short to spend it updating your website - go shoot some pictures instead!
-
 ## Theming
 
 Currently, theming support is simple and basic.
@@ -158,6 +151,13 @@ Currently, theming support is simple and basic.
 1. Write your own styles (overwriting Photogsite's default theme) inside the file that you just copied (`user.css`).
 
 The above method will overwrite the CSS for the Photogsite default theme. If you want to write your own CSS from scratch, you can - just add your CSS files to the `/css` folder and Photogsite will concatenate them and output the CSS to the webpage.
+
+## PhotogSite was Inspired by:
+- [Stacey](http://www.staceyapp.com/)
+- [Jonathan Waiter](http://www.jonathanwaiter.com/)
+- [Cass Bird](http://www.cassbird.com/)
+- [Indexhibit](http://www.indexhibit.org/)
+- And my own personal need to have a super simple portfolio website that I can update easily! Life's too short to spend it updating your website - go shoot some pictures instead!
 
 ## Support
 
