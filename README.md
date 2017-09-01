@@ -150,6 +150,15 @@ Videos are not yet supported but YouTube & Vimeo videos will be supported in a f
 - [Indexhibit](http://www.indexhibit.org/)
 - And my own personal need to have a super simple portfolio website that I can update easily! Life's too short to spend it updating your website - go shoot some pictures instead!
 
+## Theming
+
+Currently, theming support is simple and basic.
+
+1. Copy and rename the file `demo.user.css` to `user.css` inside the `/css` folder.
+1. Write your own styles (overwriting Photogsite's default theme) inside the file that you just copied (`user.css`).
+
+The above method will overwrite the CSS for the Photogsite default theme. If you want to write your own CSS from scratch, you can - just add your CSS files to the `/css` folder and Photogsite will concatenate them and output the CSS to the webpage.
+
 ## Support
 
 Please [file an issue](https://github.com/jonathanbell/PhotogSite/issues) if you encounter any errors.
