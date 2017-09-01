@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/jonathanbell/PhotogSite.svg?branch=master)](https://travis-ci.org/jonathanbell/PhotogSite)
 
-PhotogSite
-==========
+# PhotogSite
 
 PhotogSite creates a portfolio website for photographers and artists. Simply, size your images and place them into folders - PhotogSite will produce a website [like this one](http://jonathanbell.ca/).
 
@@ -32,19 +31,16 @@ Almost all commercial webhosts will meet PhotogSite's requirements. A basic inst
 
 ### Using Nginx?
 
-A server configuration like this is needed for PhotogSite to perform proper URL rewrites.
+Add these lines to your Nginx `server` block for PhotogSite to perform proper URL rewrites.
 
 ```
 server {
 
-  root /var/www/mysite.com;
-
-  index index.php;
-  server_name mysite.com;
+  ...
 
   location ~ \.php$ {
-    include snippets/fastcgi-php.conf;
-    fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+    # Pass a request for a PHP file to your PHP installation.
+    ...
   }
 
   location / {
@@ -55,12 +51,27 @@ server {
     rewrite ^/(.*)$ /index.php?section=$1 last;
   }
 
+  ...
+
 }
 ```
 
+### Installing Photogsite to a Non-root Path
+
+If you would like to install Photogsite to a path other than your root domain (ie. `mysite.com` vs `mysite.com/photogsite`), you'll need to edit your `.htaccess` file (for Apache) or site's configuration file (for Nginx).
+
+#### Instructions for Apache Web Server
+
+1. Find the line `RewriteBase /` (around line 130) in the `.htaccess` file.
+1. Comment out (add a "`#`" at the beginning of the line or remove the line) `RewriteBase /`
+1. Comment in (remove the "`#`" at the front of the line) `RewriteBase /photogsite/`
+1. Replace "`photogsite`" with the actual path to your Photogsite installation. For example: `RewriteBase /my-photos/`
+
+You're done. Do not edit other values inside the `.htaccess` file.
+
 ## Browser Support
 
-Currently working in all modern mobile and desktop browsers and IE11 and greater. Default responsive theme allows easy viewing on mobile devices.
+Currently Photogsite works (and displays well) in all modern mobile and desktop browsers including Internet Explorer version 11 and MS Edge. The default responsive theme allows easy viewing on mobile devices.
 
 ## Options
 
