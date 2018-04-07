@@ -120,13 +120,27 @@ AddDefaultCharset utf-8
 
    RewriteEngine On
    
+   # IF you have installed photosite to a path on your server other than the
+   # root path, uncomment the line below. For example, if you have installed
+   # photogsite to a path like mysite.com/subfolder edit the "RewriteBase"
+   # value to read like: "RewriteBase /subfolder/"
+
+   # (Un-comment this line)
+   #RewriteBase /photogsite/
+   # (Comment out this line)
    RewriteBase /
 
+   # Comment or remove the following lines if you DO NOT want to redirect URLs like:
+   # www.mysite.com to mysite.com (bare domain, w/o subdomain)
    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+   # Use this for non-ssl sites:
    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-   
+   # Use this for SSL'd sites only (comment line above and uncomment line below).
+   #RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
    RewriteCond %{REQUEST_FILENAME} -f [OR]
    RewriteCond %{REQUEST_FILENAME} -d
+
    RewriteRule .* - [S=3]
    RewriteRule ^([^/]+)/?$ ?section=$1 [L]
 
