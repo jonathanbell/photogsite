@@ -3,6 +3,8 @@ config.ini
 
 # Workfiles.
 TODO*
+*.bash
+*.sh
 
 # Ignore user added, site-specific logo and favicon.
 logo.png

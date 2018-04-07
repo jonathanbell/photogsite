@@ -31,9 +31,9 @@ if (isset($_GET['section'])) {
  * Define autoloader.
  * @param string $class_name
  */
-function __autoload($class_name) {
+spl_autoload_register(function($class_name) {
   require_once('./classes/class.'.$class_name.'.inc');
-}
+});
 
 // Include all helper functions.
 require_once('./inc/functions.inc');
