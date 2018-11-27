@@ -25,7 +25,7 @@ class Section extends Media {
 
   // TODO: Support YouTube/Vimeo
   private function getVideos() {
-    
+
   }
 
   private function displayPhotos() {
@@ -54,7 +54,7 @@ class Section extends Media {
 
     if (strtolower($this->name) != 'videos') {
       return $this->displayPhotos();
-    } else { 
+    } else {
       return $this->displayVideos();
     }
 

@@ -20,3 +20,6 @@ additional_links.html
 # Ignore machine generated CSS and JS.
 style.css
 bundle.js
+
+# Composer used for test only
+vendor/

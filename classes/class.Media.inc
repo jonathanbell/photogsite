@@ -4,7 +4,8 @@ class Media {
 
   public function getPhotoCaption($filepath) {
 
-    // TODO: Check if $filepath is a path to a valid image.
+    // Check if $filepath is a path to a valid image.
+    if (!file_exists($filepath)) return false;
 
     $exif = @exif_read_data($filepath, 0, true, false);
 
