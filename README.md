@@ -26,7 +26,7 @@ For more information, or, if you need help you can view [the (slightly outdated)
 Almost all commercial webhosts will meet PhotogSite's requirements. A basic install requires:
 
 - Apache2 (or Nginx, see below)
-- PHP version 5.3 or greater
+- PHP version 7.1 or greater (other versions may work, but are untested)
 - Correct file permissions (775) for PHP to create and delete files inside the PhotogSite root directory and subdirectories
 
 ### Using Nginx?
