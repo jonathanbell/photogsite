@@ -135,6 +135,10 @@ If you'd like to display some introductory text at the beginning of a section, p
 
 You can add content such as links and short paragraphs into the main navigation. Simply copy and rename `demo.additional_links.html` to `additional_links.html` inside PhotogSite's root directory. Open `additional_links.html` in your text editor and follow the instructions contained within. Some basic knowledge of HTML is required to edit this file.
 
+### Adding Content to the Homepage
+
+If you know HTML, you can copy and rename `example.splash.html` to `splash.html` in the root directory of your PhotogSite installation. The content inside this file will then be displayed on the homepage. Please note that using this option will override the `show_random_homepage_image` option inside `config.ini` file. Your custom content will be displayed and the `show_random_homepage_image` option will be ignored.
+
 ### Videos
 
 Videos are not yet supported but YouTube & Vimeo videos will be supported in a future release.

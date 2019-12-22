@@ -5,7 +5,12 @@ echo PHP_EOL.PHP_EOL;
 
 // We are on the homepage.
 if (!$section) {
-  if ($config['show_random_homepage_image']) {
+  if (file_exists(__DIR__.'/../splash.html')) {
+    print '<div class="splash-html">';
+      echo (file_get_contents(__DIR__.'/../splash.html'));
+    print '</div>';
+  }
+  elseif ($config['show_random_homepage_image']) {
     print '<div class="splash-image"><img alt="A photograph taken by '.$config['site_title'].'." src="'.getRandomImage($portfolio_sections_with_ordinal, $sections_path).'" /></div>';
   }
 } else { // We are not on the homepage.

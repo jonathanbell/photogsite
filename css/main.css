@@ -142,12 +142,22 @@ article {
   padding: 1rem 0;
 }
 
-.intro-text {
+.intro-text,
+.splash-html {
   padding: 1rem;
 }
 
-.intro-text p {
+.intro-text p,
+.splash-html p {
   padding: 0.5rem 0;
+}
+
+.splash-html a {
+  text-decoration: underline;
+}
+
+.splash-html a:hover {
+  color: #aaa;
 }
 
 /* =============================================================================
@@ -193,6 +203,7 @@ article {
   }
 
   .splash-image,
+  .splash-html,
   article {
     padding-left: var(--wide-nav-width);
   }
@@ -206,6 +217,7 @@ article {
   }
 
   .splash-image,
+  .splash-html,
   article {
     padding-left: var(--narrow-nav-width);
   }
@@ -236,6 +248,7 @@ article {
   }
 
   .splash-image,
+  .splash-html,
   article {
     padding-left: var(--extra-narrow-nav-width);
   }
