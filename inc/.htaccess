@@ -1,0 +1,5 @@
+# Prevent direct access to these (listed) files in this directory.
+<FilesMatch "\.(htaccess|htpasswd|ini|inc|phps|fla|psd|log|sh|php)$">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>

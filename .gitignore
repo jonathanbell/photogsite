@@ -1,0 +1,26 @@
+# Ignore a production configuration file.
+config.ini
+
+# Workfiles.
+TODO*
+*.bash
+*.sh
+
+# Ignore user added, site-specific logo and favicon.
+logo.png
+favicon.ico
+
+# Ignore GitHub post-recieve hook files.
+github.php
+git.log
+
+# Ignore user added additional-links or splash content.
+additional_links.html
+splash.html
+
+# Ignore machine generated CSS and JS.
+style.css
+bundle.js
+
+# Composer used for test only
+vendor/
