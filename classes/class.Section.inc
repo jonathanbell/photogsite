@@ -30,17 +30,17 @@ class Section extends Media {
 
   private function displayPhotos() {
     $output = '';
-    $output .= $this->getIntroText() ? '<li class="intro-text">'.$this->getIntroText().'</li>' : '';
+    $output .= $this->getIntroText() ? '<div class="intro-text">'.$this->getIntroText().'</div>' : '';
     $photo_paths = $this->getPhotos();
     foreach ($photo_paths as $photo_path) {
-      $output .= '<li class="image-item';
+      $output .= '<div class="image-item';
       $output .= $this->getPhotoCaption($photo_path) ? ' has-caption' : '';
       $output .= '">';
       $output .= '<img alt="';
       $output .= $this->getPhotoCaption($photo_path) ? $this->getPhotoCaption($photo_path) : 'A photograph taken by '.$this->config['site_title'];
       $output .= '" class="portfolio-image" src="'.webSafeSpaces(ltrim($photo_path, './')).'">';
       $output .= $this->getPhotoCaption($photo_path) ? '<p class="caption">'.$this->getPhotoCaption($photo_path).'</p>' : '';
-      $output .= '</li>';
+      $output .= '</div>';
     }
     return $output;
   }

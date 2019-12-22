@@ -10,8 +10,7 @@ if (!$section) {
   }
 } else { // We are not on the homepage.
   print '<article>'.PHP_EOL.'<h2 class="section-heading visuallyhidden">'.ucwords(dashesToSpaces($section)).'</h2>';
-  print '<ul id="scroll-me" class="main-content-list">';
   $s = new Section($true_section_path, $section, $config);
-  echo $s->display(); // Display all of the content : )
-  print '</ul><!-- /.main-content-list -->'.PHP_EOL.'</article>';
-} 
+  echo $s->display();
+  print PHP_EOL.'</article>';
+}

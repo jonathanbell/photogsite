@@ -1,5 +1,4 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
 
@@ -44,6 +43,12 @@ final class Tests extends TestCase {
     );
 
     $section = new Section($true_section_path, $section, $config);
-    $this->assertInternalType('string', $section->display());
+    $section_output = $section->display();
+
+    $this->assertIsString($section_output);
+    $this->assertStringContainsString(
+      '_demo.sections/03_bears/A.jpg',
+      $section_output
+    );
   }
 }

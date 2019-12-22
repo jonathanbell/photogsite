@@ -1,17 +1,19 @@
 <?php
 
 // Exceptions for local testing.
-if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'dev.jonathanbell.ca') {
+if ($_SERVER['HTTP_HOST'] == 'localhost') {
   date_default_timezone_set('America/Los_Angeles');
   error_reporting(E_ALL);
   ini_set('display_errors', 1);
 } else {
-  error_reporting(0); // Production.
+  error_reporting(0);
 }
 
 // The user has moved or renamed the all important 'config.ini' file.
 if (!file_exists(__DIR__.'/config.ini') && !file_exists(__DIR__.'/demo.config.ini')) {
-  exit("Failed to locate a configuration file! Ensure that \"config.ini\" is in the same folder as the \"index.php\" file. Perhaps you have moved or renamed the file? Terminating PhotogSite...");
+  exit(
+    'Failed to locate a configuration file! Ensure that "config.ini" is in the same folder as the "index.php" file. Perhaps you have moved or renamed the file?'
+  );
 }
 
 if (!file_exists(__DIR__.'/config.ini')) {
@@ -21,7 +23,7 @@ if (!file_exists(__DIR__.'/config.ini')) {
 }
 
 // $section is the app's main 'route'.
-// We tidy this in .htaccess for clean URLs. : )
+// We tidy this in .htaccess for clean URLs.
 $section = FALSE;
 if (isset($_GET['section'])) {
   $section = $_GET['section'];
